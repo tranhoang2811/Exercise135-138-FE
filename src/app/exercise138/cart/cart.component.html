@@ -1,0 +1,46 @@
+<h1 style="text-align: center;">
+    Shopping Cart
+</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr class="table-light">
+            <th>Remove</th>
+            <th>Image</th>
+            <th>Product(s)</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let product of cart; index as i">
+            <td style="text-align: center; width: 40px;">
+                <input class="form-check-input" type="checkbox" (change)="checkRemoveProduct(i)">
+            </td>
+            <td>
+                <img [src]="product.thumbnail">
+            </td>
+            <td>
+                {{product.title}}
+            </td>
+            <td>
+                ${{product.price}}
+            </td>
+            <td style="width: 40px; text-align: center;">
+                <input [value]="product.quantity" type="number" style="width: 40px;" (input)="onQuantityChange($event, i)">
+            </td>
+            <td>
+                ${{product.price * product.quantity}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex gap-2 justify-content-end">
+    <button class="btn btn-primary" (click)="updateCart()">
+        Update Shopping Cart
+    </button>
+    <button class="btn btn-secondary" (click)="continueShopping()">
+        Continue Shopping
+    </button>
+</div>

@@ -1,0 +1,27 @@
+<div style="width: fit-content; margin-left: 12px;">
+    <img [src]="product?.thumbnail || ''">
+    <p class="text-primary" style="margin: 0;">
+        {{ product?.title || 'N/A' }}
+    </p>
+    <div class="d-flex gap-1" style="color: lightgray; margin-bottom: 8px;">
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+    </div>
+    <p>
+        ${{ product?.price || 'N/A' }}
+    </p>
+    <div class="btn-group d-flex gap-1" role="group" style="margin-top: 8px;">
+        <button class="btn btn-primary" (click)="addToCart(product)">
+            ADD TO CART
+        </button>
+        <button class="btn btn-light">
+            <i class="bi bi-repeat"></i>
+        </button>
+        <button class="btn btn-light">
+            <i class="bi bi-heart"></i>
+        </button>
+    </div>
+</div>

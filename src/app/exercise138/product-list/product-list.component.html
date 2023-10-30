@@ -1,0 +1,8 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+    <div class="row row-cols-5 gy-3">
+        <ng-container *ngFor="let product of products">
+            <app-product-item [product]="product"></app-product-item>
+        </ng-container>
+    </div>
+</div>

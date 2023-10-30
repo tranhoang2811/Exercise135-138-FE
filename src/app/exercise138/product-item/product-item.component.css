@@ -1,0 +1,15 @@
+img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+button {
+    border-radius: 0;
+}
+
+.btn-light {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+}
